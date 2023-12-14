@@ -14,8 +14,10 @@ Maybe you can mention me or this repo in the acknowledgements too
     Backend server for mylinx
   </p>
   
-  
 
+</div>
+
+<br />
 
 
 <!-- TechStack -->
