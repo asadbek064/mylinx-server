@@ -1,9 +1,10 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import compressFilter from './utils/compressFilter.util';
 import config from './config/config';
+import routes from './routes';
 
 const app: Express = express();
 
@@ -21,8 +22,6 @@ app.use(helmet());
 // Compression is used to reduce the size of the response body
 app.use(compression({ filter: compressFilter }));
 
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+app.use('/', routes);
 
 export default app;
