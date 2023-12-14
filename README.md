@@ -16,17 +16,6 @@ Maybe you can mention me or this repo in the acknowledgements too
   
   
 
-   
-<h4>
-    <a href="https://github.com/Louis3797/express-ts-boilerplate">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/express-ts-boilerplate/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/Louis3797/express-ts-boilerplate/issues/">Request Feature</a>
-  </h4>
-</div>
-
-<br />
 
 
 <!-- TechStack -->
