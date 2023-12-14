@@ -8,34 +8,14 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <h1>Express-Typescript-Boilerplate</h1>
+  <h1>mylinx-server</h1>
   
   <p>
-    A simple Express.js boilerplate server with typescript
+    Backend server for mylinx
   </p>
   
   
-<!-- Badges -->
-<p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/express-ts-boilerplate" alt="last update" />
-  </a>
-  <a href="https://github.com/Louis3797/express-ts-boilerplate/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/express-ts-boilerplate" alt="forks" />
-  </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/express-ts-boilerplate" alt="stars" />
-  </a>
-  <a href="https://github.com/Louis3797/express-ts-boilerplate/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/express-ts-boilerplate" alt="open issues" />
-  </a>
-  <a href="https://github.com/Louis3797/express-ts-boilerplate/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/express-ts-boilerplate.svg" alt="license" />
-  </a>
-</p>
+
    
 <h4>
     <a href="https://github.com/Louis3797/express-ts-boilerplate">Documentation</a>
@@ -48,27 +28,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <br />
 
-<!-- Table of Contents -->
-# Table of Contents
-
-- [About the Project](#about-the-project)
-  * [Tech Stack](#tech-stack)
-  * [Features](#features)
-  * [Environment Variables](#environment-variables)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Linting](#linting)
-  * [Running Tests](#running-tests)
-  * [Run Locally](#run-locally)
-  * [Run with Docker](#run-with-docker)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-  
-
-<!-- About the Project -->
-## About the Project
 
 <!-- TechStack -->
 ### Tech Stack
@@ -76,7 +35,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 - ***Express.js***
 - ***Typescript***
 - ***Yarn***
-
 
 <!-- Features -->
 ### Features
@@ -121,15 +79,7 @@ This project uses Yarn as package manager
 <!-- Installation -->
 ### Installation
 
-```bash
-  git clone https://github.com/Louis3797/express-ts-boilerplate.git
-```
-
 Go to the project directory
-
-```bash
-  cd express-ts-boilerplate
-```
 
 ```bash
   yarn install
@@ -184,15 +134,14 @@ Start the server in production mode
 Build the container
 
 ```bash
-  cd express-ts-boilerplate
-  docker build . -t express-ts-boilerplate     
+  cd mylinx-server
+  docker build . -t mylinx-server     
 ```
 
 Start the container
 
 ```bash
-  docker run -p <port you want the container to run at>:4040 -d express-ts-boilerplate    
-```
+  docker run -p <port you want the container to run at>:4040 -d mylinx-server
 
 
 <!-- License -->
@@ -204,12 +153,4 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 <!-- Contact -->
 ## Contact
 
-Louis-Kaan Ay
-
-Project Link: [https://github.com/Louis3797/express-ts-boilerplate](https://github.com/Louis3797/express-ts-boilerplate)
-
-
-<!-- Acknowledgments -->
-## Acknowledgements
-
- - [Readme Template](https://github.com/Louis3797/awesome-readme-template)
+Asadbek Karimov
