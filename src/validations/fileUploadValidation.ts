@@ -11,9 +11,14 @@ const storage = multer.diskStorage({
   },
   filename: (_req, _file, cb) => {
     const fileID = nanoid(10);
-    const fileName = _file.originalname.replace(/[^a-zA-Z0-9-_.]/g, '');
+    const sanitizedOriginalName = _file.originalname.replace(
+      /[^a-zA-Z0-9-_.]/g,
+      ''
+    );
+    const fileName = `${fileID}-${sanitizedOriginalName}`;
+
     // Rename the file
-    cb(null, `${fileID}-${fileName}`);
+    cb(null, fileName);
   },
 });
 
