@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from 'express';
 import multer from 'multer';
 import path from 'path';
+import { nanoid } from 'nanoid';
 
 // Multer storage configuration
 const storage = multer.diskStorage({
@@ -8,9 +9,11 @@ const storage = multer.diskStorage({
     // Set the destination folder where files will be saved
     cb(null, path.join(process.cwd(), 'src/uploads/'));
   },
-  filename: (_req, file, cb) => {
-    // Rename the file if needed
-    cb(null, `${Date.now()}-${file.originalname}`);
+  filename: (_req, _file, cb) => {
+    const fileID = nanoid(10);
+    const fileName = _file.originalname.replace(/[^a-zA-Z0-9-_.]/g, '');
+    // Rename the file
+    cb(null, `${fileID}-${fileName}`);
   },
 });
 

@@ -1,6 +1,6 @@
 import B2 from 'backblaze-b2';
 import type { UploadedFile } from 'express-fileupload';
-import { randomID } from './utils';
+import nanoid from 'nanoid';
 
 export type BackBlaze = {
   url: string;
@@ -13,7 +13,9 @@ export const uploadFile = async <T extends Pick<UploadedFile, 'data' | 'name'>>(
   const applicationKey = process.env['BACKBLAZE_APP_KEY'] as string;
   const bucketId = process.env['BACKBLAZE_BUCKET_ID'] as string;
 
-  const fileName = `mylinx-img-${randomID(10)}`;
+  const fileId = nanoid.nanoid(10);
+
+  const fileName = `mylinx-img-${fileId}`;
 
   try {
     const b2 = new B2({ applicationKeyId, applicationKey });
