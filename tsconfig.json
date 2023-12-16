@@ -7,7 +7,10 @@
     "sourceMap": true, /* Create source map files for emitted JavaScript files. */
     "outDir": "./dist", /* Specify an output folder for all emitted files. */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": false,
+    "useUnknownInCatchVariables": false,
+    "noImplicitReturns": false
   },
   "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json",
   "exclude": ["node_modules"],

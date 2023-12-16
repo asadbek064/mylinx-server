@@ -1,13 +1,19 @@
 import type { NextFunction, Request, Response } from 'express';
+import chunk from 'lodash/chunk';
+import Api500Error from '../errors/api500Error';
+import { BackBlaze, uploadFile as backblazeUpload } from '../utils/backblaze';
 
 const fileUploadController = async (
-  _req: Request,
-  _res: Response,
+  req: Request,
+  res: Response,
   next: NextFunction
 ) => {
   try {
-    // BASED ON THE TYPE UPLOAD THE FILE TO CORRECT BUCKET
-    _res.status(200).json({
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    res.status(200).json({
       success: true,
     });
   } catch (err) {

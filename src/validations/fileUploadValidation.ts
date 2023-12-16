@@ -1,47 +1,34 @@
-import type { UploadedFile } from 'express-fileupload';
-import { body } from 'express-validator';
+import type { NextFunction, Request, Response } from 'express';
+import multer from 'multer';
+import path from 'path';
 
-export const fileUploadValidation = [
-  body('filename')
-    .optional()
-    .isString()
-    .withMessage('File name must be a string')
-    .custom((_, { req }) => {
-      const files: UploadedFile | UploadedFile[] = req['files']?.file;
+// Multer storage configuration
+const storage = multer.diskStorage({
+  destination: (_req, _file, cb) => {
+    // Set the destination folder where files will be saved
+    cb(null, path.join(process.cwd(), 'src/uploads/'));
+  },
+  filename: (_req, file, cb) => {
+    // Rename the file if needed
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
 
-      const MAX_FILE_SIZE = 15 * 1024 * 1024; // 15MB
+// File filter function to allow only certain file types
+const fileFilter = (_req: Request, file: Express.Multer.File, cb: any) => {
+  // Check file types allowed (for example, only allow JPEG and PNG)
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true);
+  } else {
+    cb(new Error('Invalid file type. Only JPEG and PNG files are allowed.'));
+  }
+};
 
-      if (!files) {
-        throw new Error('No file found');
-      }
+// Multer upload instance with configuration
+const upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+});
 
-      if (Array.isArray(files)) {
-        if (!files?.length) {
-          throw new Error('No file found');
-        }
-
-        if (files.every((file) => file.size > MAX_FILE_SIZE)) {
-          throw new Error('File size is too large');
-        }
-      } else if (!Array.isArray(files)) {
-        if (files.size > MAX_FILE_SIZE) {
-          throw new Error('File size must be less than 15MB');
-        }
-      }
-
-      return true;
-    }),
-  body('ctx')
-    .optional()
-    .isString()
-    .withMessage('Context must be a json string')
-    .custom((value) => {
-      try {
-        JSON.parse(value);
-      } catch (err) {
-        throw new Error('Context must be a json string');
-      }
-
-      return true;
-    }),
-];
+// Middleware function to handle file upload
+export const fileUploadValidation = upload.single('file');
