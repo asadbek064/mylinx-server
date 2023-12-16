@@ -13,9 +13,9 @@ const fileUploadController = async (
       return res.status(400).json({ message: 'No file uploaded' });
     }
 
-    res.status(200).json({
-      success: true,
-    });
+    const result = await backblazeUpload(req.file.buffer, 'image/jpg');
+
+    res.status(200).json(result);
   } catch (err) {
     next(err);
   }

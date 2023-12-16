@@ -4,7 +4,7 @@ import path from 'path';
 import { nanoid } from 'nanoid';
 
 // Multer storage configuration
-const storage = multer.diskStorage({
+/* const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
     // Set the destination folder where files will be saved
     cb(null, path.join(process.cwd(), 'src/uploads/'));
@@ -20,7 +20,10 @@ const storage = multer.diskStorage({
     // Rename the file
     cb(null, fileName);
   },
-});
+}); */
+
+// Multer storage configuration using MemoryStorage
+const storage = multer.memoryStorage();
 
 // File filter function to allow only certain file types
 const fileFilter = (_req: Request, file: Express.Multer.File, cb: any) => {
