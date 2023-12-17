@@ -28,10 +28,24 @@ const storage = multer.memoryStorage();
 // File filter function to allow only certain file types
 const fileFilter = (_req: Request, file: Express.Multer.File, cb: any) => {
   // Check file types allowed (for example, only allow JPEG and PNG)
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+  if (
+    file.mimetype === 'image/jpeg' ||
+    file.mimetype === 'image/png' ||
+    file.mimetype === 'image/heic' ||
+    file.mimetype === 'image/webp' ||
+    file.mimetype === 'image/gif' ||
+    file.mimetype === 'image/avif' ||
+    file.mimetype ===
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+    file.mimetype === 'application/vnd.ms-excel'
+  ) {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type. Only JPEG and PNG files are allowed.'));
+    cb(
+      new Error(
+        'Invalid file type. Only JPEG, PNG, HEIC, WEBP and AVIF files are allowed.'
+      )
+    );
   }
 };
 

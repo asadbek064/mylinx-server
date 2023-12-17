@@ -1,7 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
-import chunk from 'lodash/chunk';
 import Api500Error from '../errors/api500Error';
-import { BackBlaze, uploadFile as backblazeUpload } from '../utils/backblaze';
+import { uploadFile as backblazeUpload } from '../utils/backblaze';
 
 const fileUploadController = async (
   req: Request,
