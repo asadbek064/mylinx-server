@@ -10,7 +10,8 @@
     "strictPropertyInitialization": false,
     "noUnusedLocals": false,
     "useUnknownInCatchVariables": false,
-    "noImplicitReturns": false
+    "noImplicitReturns": false,
+    "ignoreDeprecations": "5.0"
   },
   "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json",
   "exclude": ["node_modules"],
