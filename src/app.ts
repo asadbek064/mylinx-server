@@ -8,13 +8,7 @@ import routes from './routes';
 
 const app: Express = express();
 
-app.use(
-  cors({
-    // origin is given a array if we want to have multiple origins later
-    origin: [config.cors_origin],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Helmet is used to secure this app by configuring the http-header
 app.use(helmet());

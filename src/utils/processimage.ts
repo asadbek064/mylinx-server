@@ -1,6 +1,13 @@
 import sharp from 'sharp';
 
-export const processImage = async (fileBuffer: Buffer): Promise<Buffer> => {
+export enum IMAGE_TYPE {
+  AVATAR,
+  BANNER,
+}
+
+export const processAvatarImage = async (
+  fileBuffer: Buffer
+): Promise<Buffer> => {
   try {
     // Resize dimensions (width, height)
     const width = 520;
@@ -10,7 +17,7 @@ export const processImage = async (fileBuffer: Buffer): Promise<Buffer> => {
     const processedImageBuffer = await sharp(fileBuffer)
       .resize(width, height)
       .toFormat('jpeg')
-      .jpeg({ quality: 90 })
+      .jpeg({ quality: 95 })
       .toBuffer();
 
     return processedImageBuffer;
