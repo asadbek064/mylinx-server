@@ -1,7 +1,5 @@
-import type { NextFunction, Request, Response } from 'express';
+import type { Request } from 'express';
 import multer from 'multer';
-import path from 'path';
-import { nanoid } from 'nanoid';
 
 // Multer storage configuration
 /* const storage = multer.diskStorage({
