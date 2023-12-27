@@ -21,6 +21,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@img/sharp-libvips-linuxmusl-x64": "^1.0.0",
     "@types/backblaze-b2": "^1.5.6",
     "@types/multer": "^1.4.11",
     "backblaze-b2": "^1.7.0",
