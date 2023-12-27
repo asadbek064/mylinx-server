@@ -30,12 +30,7 @@ const fileFilter = (_req: Request, file: Express.Multer.File, cb: any) => {
     file.mimetype === 'image/jpeg' ||
     file.mimetype === 'image/png' ||
     file.mimetype === 'image/heic' ||
-    file.mimetype === 'image/webp' ||
-    file.mimetype === 'image/gif' ||
-    file.mimetype === 'image/avif' ||
-    file.mimetype ===
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-    file.mimetype === 'application/vnd.ms-excel'
+    file.mimetype === 'image/webp'
   ) {
     cb(null, true);
   } else {

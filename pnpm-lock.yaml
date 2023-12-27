@@ -70,9 +70,6 @@ devDependencies:
   '@types/express':
     specifier: ^4.17.17
     version: 4.17.21
-  '@types/express-fileupload':
-    specifier: ^1.4.4
-    version: 1.4.4
   '@types/jest':
     specifier: ^29.4.0
     version: 29.5.11
@@ -1084,12 +1081,6 @@ packages:
       '@types/connect': 3.4.38
       '@types/node': 20.10.5
 
-  /@types/busboy@1.5.3:
-    resolution: {integrity: sha512-YMBLFN/xBD8bnqywIlGyYqsNFXu6bsiY7h3Ae0kO17qEuTjsqeyYMRPSUDacIKIquws2Y6KjmxAyNx8xB3xQbw==}
-    dependencies:
-      '@types/node': 20.10.5
-    dev: true
-
   /@types/compression@1.7.5:
     resolution: {integrity: sha512-AAQvK5pxMpaT+nDvhHrsBhLSYG5yQdtkaJE1WYieSNY2mVFKAgmU4ks65rkZD5oqnGCFLyQpUr1CqI4DmUMyDg==}
     dependencies:
@@ -1127,13 +1118,6 @@ packages:
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-    dev: true
-
-  /@types/express-fileupload@1.4.4:
-    resolution: {integrity: sha512-kxCs5oJ40JPhvh3LpxCeGfuSZIl8/6bk85u1YqNcIbfQCmUm3u+Ao1oOiSt/VdbEPs+V3JQg8giqxAyqXlpbWg==}
-    dependencies:
-      '@types/busboy': 1.5.3
-      '@types/express': 4.17.21
     dev: true
 
   /@types/express-serve-static-core@4.17.41:
