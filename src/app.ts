@@ -3,7 +3,6 @@ import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import compressFilter from './utils/compressFilter.util';
-import config from './config/config';
 import routes from './routes';
 
 const app: Express = express();
